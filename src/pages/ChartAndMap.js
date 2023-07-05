@@ -49,7 +49,7 @@ function ChartAndMap() {
     doFetchCovidCases();
   }, [doFetchCovidCases]);
   
-  if(isLoadingCovidCases) {
+  if(isLoadingCovidCases || !data.cases) {
     return <>Loading...</>
   };
 
