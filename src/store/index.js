@@ -17,10 +17,13 @@ import {
   formReducer
 } from "./slices/formSlice";
 
+import { covidCasesReducer } from "./slices/covidCasesSlice";
+
 const store = configureStore({
   reducer: {
     contacts: contactsReducer,
-    form: formReducer
+    form: formReducer,
+    covidCases: covidCasesReducer
   },
 });
 
@@ -37,3 +40,6 @@ export {
   changeLastNameError
   // changeSearchTerm,
 };
+
+
+export * from './thunks/fetchCovidCases';

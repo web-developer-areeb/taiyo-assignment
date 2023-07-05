@@ -51,6 +51,10 @@ function ContactList() {
     )
   });
 
+  if(!contacts.data.length) {
+    return <p>No contact found. Please add contact from Create Contact button.</p>
+  }
+
   return (
     <div className="grid grid-cols-2 gap-8">
       {renderedContacts}
