@@ -53,8 +53,9 @@ function ChartAndMap() {
     return <>Loading...</>
   };
 
-  console.log(Object.keys(data.cases));
-
+  if(loadingCovidCasesError) {
+    return <p>Opps looks like an error occured.</p>
+  };
 
 
   const labels = Object.keys(data.cases);
@@ -67,6 +68,7 @@ function ChartAndMap() {
         data: Object.values(data.cases),
         borderColor: "rgb(255, 153, 51)",
         backgroundColor: "rgb(255, 153, 51)",
+        borderWidth: 1
       },
       {
         label: 'Death',
