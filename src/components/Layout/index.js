@@ -1,7 +1,8 @@
 import { Link, Navigate, Route, Routes } from "react-router-dom";
+import ErrorPage from "../../pages/ErrorPage";
 import Contact from "../../pages/Contact";
 import ChartAndMap from "../../pages/ChartAndMap";
-import ErrorPage from "../../pages/ErrorPage";
+import CreateUpdateContact from "../CreateContact";
 
 
 function Layout() {
@@ -24,6 +25,8 @@ function Layout() {
         element={<Navigate to="/contact" replace />}
       />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/create-contact" element={<CreateUpdateContact />} />
+        <Route path="/contact/:contactID" element={<CreateUpdateContact />} />
         <Route path="/chart" element={<ChartAndMap />} />
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
