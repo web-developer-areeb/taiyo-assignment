@@ -13,6 +13,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import Loading from "../components/Loading";
 
 ChartJS.register(
   CategoryScale,
@@ -50,7 +51,11 @@ function ChartAndMap() {
   }, [doFetchCovidCases]);
   
   if(isLoadingCovidCases || !data.cases) {
-    return <>Loading...</>
+    return (
+      <div className="w-full min-h-screen flex justify-center items-center">
+        <Loading />
+      </div>
+    )
   };
 
   if(loadingCovidCasesError) {
